@@ -89,26 +89,6 @@ core rules only. No database code, no web code, no methods with real behavior.
 
 
 
-- **Task 2: Create User Entity**
-  - **Difficulty:** Very Easy
-  - **Labels:** `good first issue`, `layer:domain`, `entity`
-  - **Location:** `TalebElm.Domain/Entities/`
-  - **Instructions:** Create a public class named `User`. It should inherit from
-    `BaseEntity`. Add empty properties for `Name`, `Email`, and `JoinedAt`.
-    Do not add any methods.
-  - **Hint:** `public class User : BaseEntity { public string Name { get; set; } public string Email { get; set; } }`
-
-
-- **Task 4: Create Module Entity**
-  - **Difficulty:** Very Easy
-  - **Labels:** `good first issue`, `layer:domain`, `entity`
-  - **Location:** `TalebElm.Domain/Entities/`
-  - **Instructions:** Create a public class named `Module`. It should inherit from
-    `BaseEntity`. Add empty properties for `Title`, `Summary`, `Order`, and
-    `TrackId` (a Guid). Do not add any methods.
-  - **Hint:** `public class Module : BaseEntity { public string Title { get; set; } public int Order { get; set; } }`
-
-
 
 
 
@@ -121,15 +101,8 @@ core rules only. No database code, no web code, no methods with real behavior.
     Enums do not have methods.
   - **Hint:** `public enum LessonType { Text = 0, Video = 1, Exercise = 2 }`
 
-- **Task 8: Create UserRole Enum**
-  - **Difficulty:** Very Easy
-  - **Labels:** `good first issue`, `layer:domain`, `enum`
-  - **Location:** `TalebElm.Domain/Enums/`
-  - **Instructions:** Create a public enum named `UserRole`. Add three named
-    options: `Student`, `Instructor`, and `Admin`. Give each a number.
-    Enums do not have methods.
-  - **Hint:** `public enum UserRole { Student = 0, Instructor = 1, Admin = 2 }`
 
+<<<<<<< HEAD
 
 - **Task 12: Create IRepository Interface**
   - **Difficulty:** Medium
@@ -162,20 +135,14 @@ core rules only. No database code, no web code, no methods with real behavior.
   - **Hint:** `public interface ITrackRepository : IRepository<Track> { }`
 
 ---
+=======
+>>>>>>> 5c6b99ebb1db6d9729c8bbe1cf902451b4c539a4
 
 ## Phase 2: Application Layer (Tasks 16-25)
 
 Focus on Interfaces and empty DTO Records. The Application layer describes what
 the app can do. Here we create empty interfaces and empty DTO records. No logic.
 
-- **Task 16: Create IApplicationDbContext Interface**
-  - **Difficulty:** Easy
-  - **Labels:** `layer:application`, `interface`, `database`
-  - **Location:** `TalebElm.Application/Interfaces/`
-  - **Instructions:** Create a public interface named `IApplicationDbContext`.
-    It will be a contract for the real database context. Add a
-    `SaveChangesAsync` method signature that returns a Task of int. No bodies.
-  - **Hint:** `public interface IApplicationDbContext { Task<int> SaveChangesAsync(CancellationToken cancellationToken = default); }`
 
 - **Task 17: Create CreateUserRequest Record**
   - **Difficulty:** Very Easy
@@ -200,14 +167,6 @@ the app can do. Here we create empty interfaces and empty DTO records. No logic.
   - **Instructions:** Create a public record named `UpdateTrackRequest`. Add
     three fields: `Id` (a Guid), `Name`, and `Description`. Records do not have methods.
   - **Hint:** `public record UpdateTrackRequest(Guid Id, string Name, string Description);`
-
-- **Task 20: Create UserResponse Record**
-  - **Difficulty:** Very Easy
-  - **Labels:** `good first issue`, `layer:application`, `dto`
-  - **Location:** `TalebElm.Application/DTOs/`
-  - **Instructions:** Create a public record named `UserResponse`. Add three
-    fields: `Id` (a Guid), `Name`, and `Email`. Records do not have methods.
-  - **Hint:** `public record UserResponse(Guid Id, string Name, string Email);`
 
 - **Task 21: Create TrackResponse Record**
   - **Difficulty:** Very Easy
@@ -292,14 +251,6 @@ several other files. Empty bodies or NotImplementedException are fine.
     `Configure(EntityTypeBuilder<Lesson> builder)` and leave the body empty. No logic.
   - **Hint:** `public class LessonConfiguration : IEntityTypeConfiguration<Lesson> { public void Configure(EntityTypeBuilder<Lesson> builder) { } }`
 
-- **Task 31: Create UserRepository Class**
-  - **Difficulty:** Medium
-  - **Labels:** `layer:infrastructure`, `database`, `interface`
-  - **Location:** `TalebElm.Infrastructure/Repositories/`
-  - **Instructions:** Create a public class named `UserRepository`. It should
-    implement `IUserRepository`. For each interface method, write the signature
-    and throw `NotImplementedException`. Do not write any logic.
-  - **Hint:** `public class UserRepository : IUserRepository { public Task<User?> GetByIdAsync(Guid id) => throw new NotImplementedException(); public Task<IReadOnlyList<User>> GetAllAsync() => throw new NotImplementedException(); public Task AddAsync(User entity) => throw new NotImplementedException(); }`
 
 - **Task 32: Create TrackRepository Class**
   - **Difficulty:** Medium
