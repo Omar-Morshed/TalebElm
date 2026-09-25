@@ -2,7 +2,7 @@ using System;
 
 namespace TalebElm.Tests.UnitTests;
 
-public class ProgressDtoTest
+public class ProgressDtoTests
 {
     [Fact] public void ProgressResponse_ShouldStoreValues() { }
 }
